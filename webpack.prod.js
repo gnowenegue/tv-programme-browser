@@ -11,7 +11,9 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new webpack.DefinePlugin({
-      API_KEY: JSON.stringify(process.env.API_KEY),
+      'process.env': {
+        API_KEY: JSON.stringify(process.env.API_KEY),
+      },
     }),
   ],
 });
