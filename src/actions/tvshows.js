@@ -1,5 +1,8 @@
 import { TVSHOWS_LOAD_PENDING, TVSHOWS_LOAD_SUCCESS, TVSHOWS_LOAD_FAIL } from '../constants/actionTypes';
 
+console.log('##### process.env', JSON.stringify(process.env, null, 2));
+console.log('##### process.env.API_KEY', process.env.API_KEY);
+
 /* eslint-disable import/prefer-default-export */
 export const loadTvShows = (options = {}) => dispatch => {
   dispatch({ type: TVSHOWS_LOAD_PENDING });
