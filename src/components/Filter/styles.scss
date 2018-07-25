@@ -1,0 +1,10 @@
+@import '../../../assets/styles/colors';
+
+.filter {
+  select {
+    color: $mainPurple;
+  }
+  label {
+    color: $gold;
+  }
+}

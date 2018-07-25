@@ -1,0 +1,14 @@
+@import './assets/styles/colors';
+@import '~bootstrap/scss/bootstrap';
+
+html, body, main, #app {
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 50% 0, $mainMagenta, $mainPurple);
+}
+
+* {
+  color: white;
+}

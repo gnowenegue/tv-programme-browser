@@ -1,0 +1,26 @@
+@import '../../../assets/styles/colors';
+
+.season {
+
+  p {
+    font-size: .9rem;
+  }
+
+  h5 {
+    a {
+      color: white;
+
+      &.active {
+        color: $gold;
+      }
+    }
+  }
+
+  .episodes {
+
+    hr {
+      border-top: 1px solid $gold;
+      box-sizing: border-box;
+    }
+  }
+}

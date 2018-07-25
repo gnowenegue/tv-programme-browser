@@ -1,0 +1,33 @@
+@import '../../../assets/styles/colors';
+
+.tvShowDetail {
+  > * {
+    position: relative;
+  }
+
+  .bg {
+    position: absolute;;
+    opacity: 0.5;
+    height: 50%;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .casts, .genres, .trailer, .website {
+    font-size: .85rem;
+  }
+
+  * {
+    text-shadow: 2px 2px 5px black;
+  }
+
+  a {
+    color: $gold;
+  }
+}

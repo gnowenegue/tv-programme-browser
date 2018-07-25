@@ -1,0 +1,19 @@
+@import '../../../assets/styles/colors';
+
+.thumbnail {
+
+  img {
+    width: 185px;
+    height: 278px;
+    object-fit: cover;
+    border-width: 3px;
+
+    &.placeholder {
+      object-fit: contain;
+    }
+  }
+
+  p {
+    color: $gold;
+  }
+}
