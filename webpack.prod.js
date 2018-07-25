@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const merge = require('webpack-merge');
@@ -9,5 +10,8 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    new webpack.DefinePlugin({
+      API_KEY: JSON.stringify(process.env.API_KEY),
+    }),
   ],
 });
