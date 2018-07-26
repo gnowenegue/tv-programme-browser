@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { loadSeason } from '../../actions';
+import { Preloader } from '..';
 
 import './styles.scss';
 
@@ -50,19 +51,9 @@ class Season extends PureComponent {
       totalSeasons,
     } = this.props;
 
-    if (isLoading) {
+    if (isLoading || hasError) {
       return (
-        <p className="loading text-center position-absolute">
-          Loading...
-        </p>
-      );
-    }
-
-    if (hasError) {
-      return (
-        <p className="error text-center position-absolute">
-          Error
-        </p>
+        <Preloader noBg hasError={hasError} />
       );
     }
 

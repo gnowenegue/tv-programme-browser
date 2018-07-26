@@ -5,3 +5,4 @@ export { default as Thumbnails } from './Thumbnails';
 export { default as Pagination } from './Pagination';
 export { default as TvShowDetail } from './TvShowDetail';
 export { default as Season } from './Season';
+export { default as Preloader } from './Preloader';

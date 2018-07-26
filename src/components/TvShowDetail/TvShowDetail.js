@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Season } from '..';
+import { Season, Preloader } from '..';
 
 import { loadTvShowDetail } from '../../actions';
 
@@ -34,6 +34,7 @@ class TvShowDetail extends PureComponent {
     const {
       tvshowDetail: {
         isLoading,
+        hasError,
         information: {
           id,
           name,
@@ -54,11 +55,9 @@ class TvShowDetail extends PureComponent {
     const trailer = videos.filter(video => video.type === 'Trailer' && video.site === 'YouTube')
       .map(video => video.key)[0];
 
-    if (isLoading) {
+    if (isLoading || hasError) {
       return (
-        <p className="loading text-center position-absolute">
-          Loading...
-        </p>
+        <Preloader hasError={hasError} />
       );
     }
 
@@ -141,7 +140,9 @@ class TvShowDetail extends PureComponent {
           Episodes
         </h3>
 
-        <Season id={id} totalSeasons={numOfSeasons} />
+        <div className="seasonContainer">
+          <Season id={id} totalSeasons={numOfSeasons} />
+        </div>
 
       </div>
     );

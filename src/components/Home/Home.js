@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Filter, Thumbnails, Pagination } from '..';
+import {
+  Filter, Thumbnails, Pagination, Preloader,
+} from '..';
 
 import { loadTvShows } from '../../actions';
-
-import './styles.scss';
 
 class Home extends PureComponent {
   static propTypes = {
@@ -70,19 +70,9 @@ class Home extends PureComponent {
       sortBy,
     } = this.state;
 
-    if (isLoading) {
+    if (isLoading || hasError) {
       return (
-        <p className="loading text-center position-absolute">
-          Loading...
-        </p>
-      );
-    }
-
-    if (hasError) {
-      return (
-        <p className="error text-center position-absolute">
-          Error
-        </p>
+        <Preloader hasError={hasError} />
       );
     }
 
