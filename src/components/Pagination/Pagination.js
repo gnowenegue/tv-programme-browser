@@ -12,8 +12,8 @@ class Pagination extends PureComponent {
 
   getRange = number => {
     const { totalPages } = this.props;
-    const lowerBound = Math.max(1, number - 5);
-    const upperBound = Math.min(totalPages, number + 5);
+    const lowerBound = Math.max(1, number - 3);
+    const upperBound = Math.min(totalPages, number + 3);
     const difference = upperBound - lowerBound + 1;
     return [...Array(difference).keys()].map(x => x + lowerBound);
   };
@@ -57,7 +57,7 @@ class Pagination extends PureComponent {
 
     return (
       <nav className="mb-5">
-        <ul className="pagination justify-content-center">
+        <ul className="pagination justify-content-center flex-wrap">
           <li className="page-item">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="page-link" href="#" onClick={e => this.handlePreviousPageClick(e, currentPage - 1)}>
