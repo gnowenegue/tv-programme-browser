@@ -24,7 +24,9 @@ export default (state = defaultState, action = {}) => {
         isLoading: false,
         hasError: false,
         shows: [
-          ...payload.results,
+          ...payload.results instanceof Array && payload.results instanceof Object
+            ? payload.results
+            : Object.values(payload.results),
         ],
         currentPage: payload.page,
         totalPages: payload.total_pages,
