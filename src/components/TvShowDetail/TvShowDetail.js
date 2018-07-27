@@ -65,10 +65,14 @@ class TvShowDetail extends PureComponent {
       <div className="tvShowDetail">
 
         <div className="bg w-100">
-          <img
-            src={`https://image.tmdb.org/t/p/w1280/${backdropPath}`}
-            alt={name}
-          />
+          {
+            backdropPath && (
+            <img
+              src={`https://image.tmdb.org/t/p/w1280/${backdropPath}`}
+              alt={name}
+            />
+            )
+          }
         </div>
 
         <h1 className="text-center mt-4">

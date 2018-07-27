@@ -21,9 +21,10 @@ class Season extends PureComponent {
     const {
       loadSeason,
       id,
+      totalSeasons,
     } = this.props;
 
-    loadSeason({ id, seasonId: 1 });
+    loadSeason({ id, seasonId: totalSeasons > 0 ? 1 : -1 });
   }
 
   goToSeason = (e, seasonId) => {
@@ -94,7 +95,7 @@ class Season extends PureComponent {
 
         <div className="episodes">
           {
-            episodes.map((episode, i, episodes) => (
+            episodes && episodes.map((episode, i, episodes) => (
               <div className="row" key={episode.episode_number}>
                 <p className="col-1 col-sm-2 my-2">
                   {episode.episode_number}
