@@ -2,7 +2,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 html, body, main, #app {
-  min-height: 100%;
+  min-height: 100vh;
+  height: auto;
 }
 
 body {

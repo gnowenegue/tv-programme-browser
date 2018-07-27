@@ -3,6 +3,7 @@
 .preloader {
   top: 0;
   left: 0;
+  height: 100vh;
 
   &.noBg {
     .bg {
@@ -15,6 +16,7 @@
     left: 0;
     background-color: black;
     opacity: .5;
+    height: 100vh;
   }
 
   .loading {
