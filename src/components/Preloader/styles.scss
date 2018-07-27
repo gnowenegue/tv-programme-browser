@@ -6,8 +6,11 @@
   height: 100vh;
 
   &.noBg {
+    height: auto;
+    margin-top: 3rem;
     .bg {
       background: none;
+      height: auto;
     }
   }
 
